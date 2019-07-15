@@ -1,0 +1,10 @@
+only_show_on_homepage:
+  default: false
+  description: When unchecked the banner will show on all pages listed in the <a href="/admin/site_settings/category/all_results?filter=top_menu">top menu site setting</a>
+
+background_image:
+  type: string
+  default: none
+  description: Enter an image url
+
+tile_background_image: false

@@ -1,0 +1,140 @@
+@import "common/foundation/mixins";
+
+$max-width: 600px;
+
+.display-search-banner {
+  #main-outlet {
+    padding-top: 0;
+  }
+}
+
+.custom-search-banner {
+  padding-top: 4em;
+}
+
+.custom-search-banner-wrap {
+  @if $background-image != "none" {
+    background-image: url($background-image);
+  } @else {
+    background: none;
+  }
+  @if $tile-background_image == "true" {
+    background-size: auto;
+  } @else {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  box-sizing: border-box;
+  position: relative;
+  padding: 2.5em 0 3em;
+  margin: 1em auto;
+  @include breakpoint(tablet) {
+    padding: 1em 8px 2em;
+    margin-top: 0.5em;
+  }
+
+  > div {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+
+  .search-menu {
+    position: relative;
+    display: flex;
+    input[type="text"] {
+      margin: 0;
+      width: 100%;
+      padding-right: 4em;
+    }
+  }
+
+  .search-input {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+    .searching {
+      // spinner
+      top: 0.5em;
+      right: 2.25em;
+    }
+  }
+
+  h1 {
+    font-size: $font-up-6;
+    line-height: $line-height-medium;
+    @include breakpoint(tablet) {
+      font-size: $font-up-4;
+    }
+  }
+
+  h1,
+  p {
+    text-align: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    z-index: 2;
+    order: 2;
+    right: 0;
+    background: transparent;
+    .discourse-no-touch & {
+      &:hover {
+        background: transparent;
+        .d-icon {
+          color: $primary-high;
+        }
+      }
+    }
+  }
+
+  .search-context,
+  .results {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+
+  .search-context {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 2.67em;
+  }
+
+  .results {
+    box-sizing: border-box;
+    background: $secondary;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: $max-width;
+    z-index: 9;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: 1.9em;
+    right: 0;
+    padding: 2em 1em 1em 1em;
+    @include breakpoint(mobile-extra-large) {
+      width: 100%;
+    }
+    ul,
+    ol {
+      list-style-type: none;
+      margin: 0;
+    }
+  }
+}
+
+.search-widget {
+  div.discourse-tags {
+    font-size: $font-down-1;
+  }
+  li a.widget-link {
+    display: block;
+    padding: 0.25em 0.5em;
+    &:hover,
+    &:focus {
+      background-color: $highlight-medium;
+    }
+  }
+}
