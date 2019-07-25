@@ -6,10 +6,12 @@
 
       api.onPageChange((url, title) => {
         var home = url === "/" || url.match(/^\/\?/) || url === homeRoute
-        if(settings.only_show_on_homepage) {
+        if(settings.show_on === "homepage") {
           var showBannerHere = home
-        } else {
+        } else if (settings.show_on === "top_menu"){
           var showBannerHere = topMenuRoutes.indexOf(url) > -1 || home
+        } else {
+          var showBannerHere = url.match(/.*/) && !url.match(/search.*/) && !url.match(/admin.*/)
         }
         if (showBannerHere){
           component.set('displaySearchBanner', true);
@@ -18,6 +20,23 @@
           component.set('displaySearchBanner', false);
           $('html').removeClass('display-search-banner');
         }
+
+        if(settings.show_for === "everyone") {
+          component.set('show_for', true);
+        } else if(settings.show_for === "logged_out" && !api.getCurrentUser()) {
+          component.set('show_for', true);
+        } else if(settings.show_for === "logged_in" && api.getCurrentUser()) {
+          component.set('show_for', true);
+        } else {
+          component.set('show_for', false);
+          $('html').removeClass('display-search-banner');
+          console.log(false);
+
+        }
+
+
+
+
       });
     }
   });
@@ -130,13 +149,17 @@
   type="text/x-handlebars"
   data-template-name="/connectors/below-site-header/search-banner"
 >
-  {{#if displaySearchBanner}}
-    <div class="custom-search-banner" >
-      <div class="wrap custom-search-banner-wrap">
-        <h1>{{theme-i18n "search_banner.headline"}}</h1>
-        <p>{{theme-i18n "search_banner.subhead"}}</p>
-        {{mount-widget widget="search-widget"}}
+
+  {{#if show_for}}
+    {{#if displaySearchBanner}}
+      <div class="custom-search-banner" >
+        <div class="wrap custom-search-banner-wrap">
+          <h1>{{theme-i18n "search_banner.headline"}}</h1>
+          <p>{{theme-i18n "search_banner.subhead"}}</p>
+          {{mount-widget widget="search-widget"}}
+        </div>
       </div>
-    </div>
+    {{/if}}
+
   {{/if}}
 </script>
