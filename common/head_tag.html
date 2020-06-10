@@ -1,5 +1,5 @@
 <script type="text/discourse-plugin" version="0.8">
-  api.registerConnectorClass('below-site-header', 'search-banner', {
+  api.registerConnectorClass('above-main-container', 'search-banner', {
     setupComponent(args, component) {
       var topMenuRoutes = Discourse.SiteSettings.top_menu.split('|').map(function(route) {return '/' + route});
       var homeRoute = topMenuRoutes[0];
@@ -30,13 +30,7 @@
         } else {
           component.set('show_for', false);
           $('html').removeClass('display-search-banner');
-          console.log(false);
-
         }
-
-
-
-
       });
     }
   });
@@ -147,7 +141,7 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/below-site-header/search-banner"
+  data-template-name="/connectors/above-main-container/search-banner"
 >
 
   {{#if show_for}}
