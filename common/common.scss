@@ -8,10 +8,6 @@ $max-width: 600px;
   }
 }
 
-.custom-search-banner {
-  padding-top: 4em;
-}
-
 .custom-search-banner-wrap {
   @if $background-image != "none" {
     background-image: url($background-image);
