@@ -7,6 +7,13 @@ show_on:
     - all
   description: top_menu refers to the <a href="/admin/site_settings/category/all_results?filter=top_menu">top menu site setting</a>
 
+plugin_outlet:
+  default: "above-main-container"
+  type: enum
+  choices:
+    - above-main-container
+    - below-site-header
+
 background_image:
   type: string
   default: none
