@@ -1,0 +1,9 @@
+{{#if shouldDisplay}}
+  <div class="custom-search-banner" >
+    <div class="wrap custom-search-banner-wrap">
+      <h1>{{theme-i18n "search_banner.headline"}}</h1>
+      <p>{{theme-i18n "search_banner.subhead"}}</p>
+      {{mount-widget widget="search-widget"}}
+    </div>
+  </div>
+{{/if}}
