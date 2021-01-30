@@ -31,9 +31,9 @@ export default Component.extend({
     const showFor = settings.show_for;
     if (showFor == "everyone") {
       return true;
-    } else if (showFor == "logged_out" && !currentUser) {
+    } else if (showFor == "logged_out" && !this.currentUser) {
       return true;
-    } else if (showFor == "logged_in" && currentUser) {
+    } else if (showFor == "logged_in" && this.currentUser) {
       return true;
     }
     return false;
