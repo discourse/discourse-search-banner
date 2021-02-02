@@ -27,13 +27,13 @@ export default Component.extend({
   },
 
   @discourseComputed("currentUser")
-  displayForUser() {
+  displayForUser(currentUser) {
     const showFor = settings.show_for;
     if (showFor == "everyone") {
       return true;
-    } else if (showFor == "logged_out" && !this.currentUser) {
+    } else if (showFor == "logged_out" && !currentUser) {
       return true;
-    } else if (showFor == "logged_in" && this.currentUser) {
+    } else if (showFor == "logged_in" && currentUser) {
       return true;
     }
     return false;
