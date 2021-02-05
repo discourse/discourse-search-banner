@@ -27,7 +27,7 @@ export default Component.extend({
   },
 
   @discourseComputed("currentUser")
-  displayForUser() {
+  displayForUser(currentUser) {
     const showFor = settings.show_for;
     if (showFor == "everyone") {
       return true;
