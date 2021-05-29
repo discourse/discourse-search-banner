@@ -56,10 +56,10 @@ $max-width: 600px;
   }
 
   h1 {
-    font-size: $font-up-6;
+    font-size: var(--font-up-6);
     line-height: $line-height-medium;
     @include breakpoint(tablet) {
-      font-size: $font-up-4;
+      font-size: var(--font-up-4);
     }
   }
 
@@ -78,7 +78,7 @@ $max-width: 600px;
       &:hover {
         background: transparent;
         .d-icon {
-          color: $primary-high;
+          color: var(--primary-high);
         }
       }
     }
@@ -104,7 +104,7 @@ $max-width: 600px;
 
   .results {
     box-sizing: border-box;
-    background: $secondary;
+    background: var(--secondary);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     position: absolute;
     width: $max-width;
@@ -128,14 +128,14 @@ $max-width: 600px;
 
 .search-widget {
   div.discourse-tags {
-    font-size: $font-down-1;
+    font-size: var(--font-down-1);
   }
   li a.widget-link {
     display: block;
     padding: 0.25em 0.5em;
     &:hover,
     &:focus {
-      background-color: $highlight-medium;
+      background-color: var(--highlight-medium);
     }
   }
 }
