@@ -28,3 +28,23 @@ show_for:
     - everyone
     - logged_in
     - logged_out
+
+banner_title_one:
+  default: ""
+  type: string
+  description: "Title of the first link in the search menu"
+
+banner_link_one:
+  default: ""
+  type: string
+  description: "Href of the first link in the search menu"
+
+banner_title_two:
+  default: ""
+  type: string
+  description: "Title of the first link in the search menu"
+
+banner_link_two:
+  default: ""
+  type: string
+  description: "Href of the first link in the search menu"
