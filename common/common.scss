@@ -112,9 +112,9 @@ $max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    top: 1.9em;
+    top: 2.4em;
     right: 0;
-    padding: 2em 1em 1em 1em;
+    padding: 0.5em;
     @include breakpoint(mobile-extra-large) {
       width: 100%;
     }
@@ -124,18 +124,16 @@ $max-width: 600px;
       margin: 0;
     }
   }
-}
 
-.search-widget {
-  div.discourse-tags {
-    font-size: var(--font-down-1);
+  .searching a.show-advanced-search {
+    display: none;
   }
-  li a.widget-link {
-    display: block;
-    padding: 0.25em 0.5em;
-    &:hover,
-    &:focus {
-      background-color: var(--highlight-medium);
-    }
+
+  .search-link .d-icon {
+    color: var(--primary-medium);
+  }
+
+  span.keyword {
+    color: var(--primary);
   }
 }
