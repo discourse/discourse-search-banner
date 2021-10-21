@@ -25,16 +25,14 @@ export default apiInitializer("0.8", (api) => {
       return {
         formFactor: attrs.formFactor || "menu",
         showHeaderResults: false,
+        inTopicContext: attrs.inTopicContext,
       };
     },
-    html: function () {
+    html: function (attrs, state) {
       if (this.state.formFactor === "widget") {
         return this.panelContents();
       } else {
-        return this.attach("menu-panel", {
-          maxWidth: 500,
-          contents: () => this.panelContents(),
-        });
+        return this._super(attrs, state);
       }
     },
     clickOutside() {
