@@ -15,9 +15,9 @@ plugin_outlet:
     - below-site-header
 
 background_image:
-  type: string
-  default: none
-  description: Enter an image url
+  type: upload
+  default: ""
+  description: background image for the banner
 
 tile_background_image: false
 
