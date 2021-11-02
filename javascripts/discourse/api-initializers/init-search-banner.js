@@ -35,11 +35,6 @@ export default apiInitializer("0.8", (api) => {
         return this._super(attrs, state);
       }
     },
-    clickOutside() {
-      if (!this.vnode.hooks["widget-mouse-down-outside"]) {
-        return this.mouseDownOutside();
-      }
-    },
     mouseDownOutside() {
       const formFactor = this.state.formFactor;
       if (formFactor === "menu") {
