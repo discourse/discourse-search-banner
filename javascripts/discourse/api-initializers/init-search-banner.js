@@ -1,3 +1,4 @@
+import { ajax } from "discourse/lib/ajax";
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("0.8", (api) => {
@@ -54,13 +55,25 @@ export default apiInitializer("0.8", (api) => {
       this.state.showHeaderResults = true;
       this.scheduleRerender();
     },
-    linkClickedEvent: function () {
+    linkClickedEvent(attrs) {
       const formFactor = this.state.formFactor;
+      this._logSearchLinkClick(attrs);
       if (formFactor === "widget") {
-        $("#search-term").val("");
-        $(".search-placeholder").css("visibility", "visible");
         this.state.showHeaderResults = false;
         this.scheduleRerender();
+      }
+    },
+    _logSearchLinkClick(attrs) {
+      const { searchLogId, searchResultId, searchResultType } = attrs;
+      if (searchLogId && searchResultId && searchResultType) {
+        ajax("/search/click", {
+          type: "POST",
+          data: {
+            search_log_id: searchLogId,
+            search_result_id: searchResultId,
+            search_result_type: searchResultType,
+          },
+        });
       }
     },
     panelContents: function () {
