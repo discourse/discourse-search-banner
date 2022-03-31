@@ -1,5 +1,5 @@
-import { ajax } from "discourse/lib/ajax";
 import { apiInitializer } from "discourse/lib/api";
+import { logSearchLinkClick } from "discourse/lib/search";
 
 export default apiInitializer("0.8", (api) => {
   const enableConnectorName = settings.plugin_outlet;
@@ -56,24 +56,20 @@ export default apiInitializer("0.8", (api) => {
       this.scheduleRerender();
     },
     linkClickedEvent(attrs) {
+      const { searchLogId, searchResultId, searchResultType } = attrs;
+      if (searchLogId && searchResultId && searchResultType) {
+        logSearchLinkClick({
+          searchLogId,
+          searchResultId,
+          searchResultType,
+        });
+      }
+
       const formFactor = this.state.formFactor;
-      this._logSearchLinkClick(attrs);
+
       if (formFactor === "widget") {
         this.state.showHeaderResults = false;
         this.scheduleRerender();
-      }
-    },
-    _logSearchLinkClick(attrs) {
-      const { searchLogId, searchResultId, searchResultType } = attrs;
-      if (searchLogId && searchResultId && searchResultType) {
-        ajax("/search/click", {
-          type: "POST",
-          data: {
-            search_log_id: searchLogId,
-            search_result_id: searchResultId,
-            search_result_type: searchResultType,
-          },
-        });
       }
     },
     panelContents: function () {
