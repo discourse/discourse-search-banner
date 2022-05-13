@@ -90,7 +90,7 @@ export default apiInitializer("0.8", (api) => {
       }
 
       contents = contents.concat(...corePanelContents.call(this));
-      let results = contents.find((w) => w.name == "search-menu-results");
+      let results = contents.find((w) => w.name === "search-menu-results");
       if (results && results.attrs.results) {
         $(".search-menu.search-header").addClass("has-results");
       } else {
@@ -101,8 +101,8 @@ export default apiInitializer("0.8", (api) => {
       } else {
         return contents.filter((widget) => {
           return (
-            widget.name != "search-menu-results" &&
-            widget.name != "search-context"
+            widget.name !== "search-menu-results" &&
+            widget.name !== "search-context"
           );
         });
       }
@@ -113,7 +113,6 @@ export default apiInitializer("0.8", (api) => {
   });
   api.decorateWidget("search-widget:after", function (helper) {
     const searchWidget = helper.widget,
-      appController = helper.register.lookup("controller:application"),
       searchMenuVisible = searchWidget.state.searchVisible;
     if (!searchMenuVisible && !searchWidget.attrs.topic) {
       return helper.attach("search-menu", {
