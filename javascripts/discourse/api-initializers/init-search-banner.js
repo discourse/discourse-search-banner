@@ -17,25 +17,29 @@ export default apiInitializer("0.8", (api) => {
   // Simplified version of header search theme component
   const searchMenuWidget = api.container.factoryFor("widget:search-menu");
   const corePanelContents = searchMenuWidget.class.prototype["panelContents"];
+
   api.reopenWidget("search-menu", {
-    buildKey: function (attrs) {
+    buildKey(attrs) {
       let type = attrs.formFactor || "menu";
       return `search-${type}`;
     },
-    defaultState: function (attrs) {
+
+    defaultState(attrs) {
       return {
         formFactor: attrs.formFactor || "menu",
         showHeaderResults: false,
         inTopicContext: attrs.inTopicContext,
       };
     },
-    html: function (attrs, state) {
+
+    html(attrs, state) {
       if (this.state.formFactor === "widget") {
         return this.panelContents();
       } else {
         return this._super(attrs, state);
       }
     },
+
     mouseDownOutside() {
       const formFactor = this.state.formFactor;
       if (formFactor === "menu") {
@@ -45,16 +49,19 @@ export default apiInitializer("0.8", (api) => {
         this.scheduleRerender();
       }
     },
-    click: function () {
+
+    click() {
       const formFactor = this.state.formFactor;
       if (formFactor === "widget") {
         this.showResults();
       }
     },
-    showResults: function () {
+
+    showResults() {
       this.state.showHeaderResults = true;
       this.scheduleRerender();
     },
+
     linkClickedEvent(attrs) {
       const { searchLogId, searchResultId, searchResultType } = attrs;
       if (searchLogId && searchResultId && searchResultType) {
@@ -72,7 +79,8 @@ export default apiInitializer("0.8", (api) => {
         this.scheduleRerender();
       }
     },
-    panelContents: function () {
+
+    panelContents() {
       const formFactor = this.state.formFactor;
       let showHeaderResults =
         this.state.showHeaderResults == null ||
@@ -108,12 +116,15 @@ export default apiInitializer("0.8", (api) => {
       }
     },
   });
+
   api.createWidget("search-widget", {
     tagName: "div.search-widget",
   });
+
   api.decorateWidget("search-widget:after", function (helper) {
-    const searchWidget = helper.widget,
-      searchMenuVisible = searchWidget.state.searchVisible;
+    const searchWidget = helper.widget;
+    const searchMenuVisible = searchWidget.state.searchVisible;
+
     if (!searchMenuVisible && !searchWidget.attrs.topic) {
       return helper.attach("search-menu", {
         contextEnabled: searchWidget.state.contextEnabled,
