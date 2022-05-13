@@ -1,8 +1,8 @@
 {
   "name": "discourse-search-banner",
+  "component": true,
   "about_url": "https://meta.discourse.org/t/search-banner-theme-component/122939",
   "license_url": "https://github.com/awesomerobot/discourse-search-banner/blob/master/LICENSE",
-  "component": true,
   "assets": {},
   "color_schemes": {}
 }
