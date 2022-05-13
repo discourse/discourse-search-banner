@@ -11,16 +11,16 @@ export default Component.extend({
   @discourseComputed("router.currentRouteName")
   displayForRoute(currentRouteName) {
     const showOn = settings.show_on;
-    if (showOn == "homepage") {
-      return currentRouteName == `discovery.${defaultHomepage()}`;
-    } else if (showOn == "top_menu") {
+    if (showOn === "homepage") {
+      return currentRouteName === `discovery.${defaultHomepage()}`;
+    } else if (showOn === "top_menu") {
       return this.siteSettings.top_menu
         .split("|")
-        .any((m) => `discovery.${m}` == currentRouteName);
+        .any((m) => `discovery.${m}` === currentRouteName);
     } else {
       // "all"
       return (
-        currentRouteName != "full-page-search" &&
+        currentRouteName !== "full-page-search" &&
         !currentRouteName.startsWith("admin.")
       );
     }
@@ -29,11 +29,11 @@ export default Component.extend({
   @discourseComputed("currentUser")
   displayForUser(currentUser) {
     const showFor = settings.show_for;
-    if (showFor == "everyone") {
+    if (showFor === "everyone") {
       return true;
-    } else if (showFor == "logged_out" && !currentUser) {
+    } else if (showFor === "logged_out" && !currentUser) {
       return true;
-    } else if (showFor == "logged_in" && currentUser) {
+    } else if (showFor === "logged_in" && currentUser) {
       return true;
     }
     return false;

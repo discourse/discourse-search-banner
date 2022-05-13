@@ -1,0 +1,10 @@
+{
+  "name": "discourse-search-banner",
+  "version": "1.0.0",
+  "repository": "https://github.com/discourse/discourse-search-banner",
+  "author": "Discourse",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.1.0"
+  }
+}
