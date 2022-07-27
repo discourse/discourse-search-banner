@@ -18,10 +18,6 @@ export default apiInitializer("0.8", (api) => {
   const searchMenuWidget = api.container.factoryFor("widget:search-menu");
   const corePanelContents = searchMenuWidget.class.prototype["panelContents"];
 
-  api.reopenWidget("search-term", {
-    buildId: () => "search-banner-term",
-  });
-
   api.reopenWidget("search-menu", {
     buildKey(attrs) {
       let type = attrs.formFactor || "menu";
