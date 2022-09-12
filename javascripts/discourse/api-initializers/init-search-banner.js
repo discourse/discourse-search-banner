@@ -63,13 +63,15 @@ export default apiInitializer("0.8", (api) => {
     },
 
     linkClickedEvent(attrs) {
-      const { searchLogId, searchResultId, searchResultType } = attrs;
-      if (searchLogId && searchResultId && searchResultType) {
-        logSearchLinkClick({
-          searchLogId,
-          searchResultId,
-          searchResultType,
-        });
+      if (attrs) {
+        const { searchLogId, searchResultId, searchResultType } = attrs;
+        if (searchLogId && searchResultId && searchResultType) {
+          logSearchLinkClick({
+            searchLogId,
+            searchResultId,
+            searchResultType,
+          });
+        }
       }
 
       const formFactor = this.state.formFactor;
