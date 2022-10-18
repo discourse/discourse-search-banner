@@ -1,0 +1,117 @@
+@if $special-style == "big search, no text" {
+  .custom-search-banner-wrap {
+    padding: 0;
+
+    @if $background-image != "" {
+      background-image: url(#{$background-image});
+      padding: 4em 4em 4.25em;
+
+      .search-input {
+        box-shadow: shadow("dropdown");
+      }
+    }
+
+    .search-context,
+    .results {
+      max-width: unset;
+      width: 100%;
+    }
+
+    > h1,
+    > p {
+      display: none;
+    }
+
+    > div {
+      font-size: var(--font-up-4);
+      max-width: unset;
+    }
+
+    .results {
+      font-size: var(--font-down-3);
+      top: 3.45em;
+      padding: 0;
+
+      .search-result-topic .first-line {
+        font-size: var(--font-up-1);
+      }
+    }
+
+    .blurb {
+      font-size: var(--font-down-2);
+      max-width: 600px;
+      color: var(--primary-high);
+    }
+
+    .second-line,
+    .discourse-tags {
+      font-size: var(--font-down-1);
+    }
+
+    .search-menu-recent .heading {
+      margin: 0 0 0.75em 0;
+      padding: 0.33em 1em;
+      font-size: var(--font-up-1);
+    }
+
+    .search-menu-recent {
+      font-size: var(--font-down-1);
+      margin-top: 0;
+      li:last-child {
+        .search-link {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .search-random-quick-tip {
+      padding: 1em;
+      font-size: var(--font-down-1);
+    }
+
+    .no-results {
+      padding: 1em;
+    }
+
+    .results > * {
+      padding: 0 !important;
+      margin: 0 !important;
+
+      li:first-child {
+        .search-link {
+          margin-top: 0;
+        }
+      }
+
+      li:last-child {
+        .search-link {
+          margin-bottom: 0;
+        }
+      }
+
+      .search-link {
+        margin: -1em 0 0.33em 0;
+        padding: 1em;
+      }
+
+      .show-more {
+        margin-top: 0.33em;
+        .search-link {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .results .search-menu-assistant-item {
+      font-size: var(--font-0);
+    }
+
+    .search-input .searching {
+      top: 0.75em;
+    }
+
+    .no-results {
+      padding: 1em !important;
+    }
+  }
+}

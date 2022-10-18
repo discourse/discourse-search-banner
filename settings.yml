@@ -28,3 +28,11 @@ show_for:
     - everyone
     - logged_in
     - logged_out
+
+special_style:
+  default: "basic style (default)"
+  type: enum
+  description: optional variations that change the appearance of the search banner
+  choices:
+    - "big search, no text"
+    - "basic style (default)"
