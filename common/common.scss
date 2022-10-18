@@ -76,6 +76,7 @@ $max-width: 600px;
     z-index: 2;
     order: 2;
     right: 0;
+    height: 100%;
     background: transparent;
     .discourse-no-touch & {
       &:hover {
@@ -140,3 +141,6 @@ $max-width: 600px;
     color: var(--primary);
   }
 }
+
+// these are add-on styles controlled by settings
+@import "special-styles";
