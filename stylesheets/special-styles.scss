@@ -106,6 +106,10 @@
       font-size: var(--font-0);
     }
 
+    .search-input .searching {
+      top: 0.75em;
+    }
+
     .no-results {
       padding: 1em !important;
     }
