@@ -2,7 +2,7 @@ This is a component that puts a search bar along with optional headline and subh
 
 By default this banner appears on all top-level topic pages (latest/new/unread/top/categories... anything in the `top menu` site setting) but it can also be set to only display on a community's homepage.
 
-![17%20PM|690x326](https://d11a6trkgmumsb.cloudfront.net/optimized/3X/1/4/14ec7e5d17d7b8bd203759ce1c9b69605e2d9e03_2_1380x652.png)
+![screenshot](https://user-images.githubusercontent.com/5862206/214549198-419cb28d-efea-43a3-a273-9fd9617de030.png)
 
 :building_construction: [Github repo](https://github.com/discourse/discourse-search-banner): `https://github.com/discourse/discourse-search-banner`
 
