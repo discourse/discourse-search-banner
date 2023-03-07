@@ -82,6 +82,27 @@ export default apiInitializer("0.8", (api) => {
       }
     },
 
+    focusSearchInput() {
+      const searchInput =
+        this.state.formFactor === "widget"
+          ? document.querySelector(".search-widget #search-term")
+          : document.querySelector(".search-menu #search-term");
+
+      searchInput.focus();
+      searchInput.select();
+    },
+
+    setTopicContext() {
+      this.state.inTopicContext = true;
+      this.focusSearchInput();
+    },
+
+    clearContext() {
+      this.state.inTopicContext = false;
+      this.sendWidgetAction("clearSearch");
+      this.focusSearchInput();
+    },
+
     panelContents() {
       const formFactor = this.state.formFactor;
       let showHeaderResults =
@@ -100,12 +121,6 @@ export default apiInitializer("0.8", (api) => {
       }
 
       contents = contents.concat(...corePanelContents.call(this));
-      let results = contents.find((w) => w.name === "search-menu-results");
-      if (results && results.attrs.results) {
-        $(".search-menu.search-header").addClass("has-results");
-      } else {
-        $(".search-menu.search-header").removeClass("has-results");
-      }
       if (formFactor === "menu" || showHeaderResults) {
         return contents;
       } else {
