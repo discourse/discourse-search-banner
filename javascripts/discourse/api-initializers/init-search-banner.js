@@ -92,15 +92,14 @@ export default apiInitializer("0.8", (api) => {
       searchInput.select();
     },
 
-    setTopicContext() {
-      this.state.inTopicContext = true;
-      this.focusSearchInput();
+    clearContext() {
+      this.sendWidgetAction("clearSearch");
+      this.sendWidgetAction("clearSearchWidgetContext");
+      this.state.inTopicContext = false;
     },
 
-    clearContext() {
+    clearSearchWidgetContext() {
       this.state.inTopicContext = false;
-      this.sendWidgetAction("clearSearch");
-      this.focusSearchInput();
     },
 
     panelContents() {
@@ -136,17 +135,24 @@ export default apiInitializer("0.8", (api) => {
 
   api.createWidget("search-widget", {
     tagName: "div.search-widget",
-  });
 
-  api.decorateWidget("search-widget:after", function (helper) {
-    const searchWidget = helper.widget;
-    const searchMenuVisible = searchWidget.state.searchVisible;
+    html() {
+      const searchMenuVisible = this.state.searchVisible;
 
-    if (!searchMenuVisible && !searchWidget.attrs.topic) {
-      return helper.attach("search-menu", {
-        contextEnabled: searchWidget.state.contextEnabled,
-        formFactor: "widget",
-      });
-    }
+      if (!searchMenuVisible && !this.attrs.topic) {
+        return this.attach("search-menu", {
+          contextEnabled: this.state.contextEnabled,
+          formFactor: "widget",
+        });
+      }
+    },
+
+    clearSearchWidgetContext() {
+      this.state.inTopicContext = false;
+    },
+
+    setTopicContext() {
+      this.state.inTopicContext = true;
+    },
   });
 });
