@@ -11,10 +11,14 @@
       }
     }
 
-    .search-context,
     .results {
       max-width: unset;
       width: 100%;
+    }
+
+    .search-context {
+      max-width: unset;
+      width: auto;
     }
 
     > h1,
@@ -107,7 +111,7 @@
     }
 
     .search-input .searching {
-      top: 0.75em;
+      top: 0.45em;
     }
 
     .no-results {

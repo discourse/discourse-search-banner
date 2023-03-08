@@ -82,6 +82,26 @@ export default apiInitializer("0.8", (api) => {
       }
     },
 
+    focusSearchInput() {
+      const searchInput =
+        this.state.formFactor === "widget"
+          ? document.querySelector(".search-widget #search-term")
+          : document.querySelector(".search-menu #search-term");
+
+      searchInput.focus();
+      searchInput.select();
+    },
+
+    clearContext() {
+      this.sendWidgetAction("clearSearch");
+      this.sendWidgetAction("clearSearchWidgetContext");
+      this.state.inTopicContext = false;
+    },
+
+    clearSearchWidgetContext() {
+      this.state.inTopicContext = false;
+    },
+
     panelContents() {
       const formFactor = this.state.formFactor;
       let showHeaderResults =
@@ -100,12 +120,6 @@ export default apiInitializer("0.8", (api) => {
       }
 
       contents = contents.concat(...corePanelContents.call(this));
-      let results = contents.find((w) => w.name === "search-menu-results");
-      if (results && results.attrs.results) {
-        $(".search-menu.search-header").addClass("has-results");
-      } else {
-        $(".search-menu.search-header").removeClass("has-results");
-      }
       if (formFactor === "menu" || showHeaderResults) {
         return contents;
       } else {
@@ -121,17 +135,24 @@ export default apiInitializer("0.8", (api) => {
 
   api.createWidget("search-widget", {
     tagName: "div.search-widget",
-  });
 
-  api.decorateWidget("search-widget:after", function (helper) {
-    const searchWidget = helper.widget;
-    const searchMenuVisible = searchWidget.state.searchVisible;
+    html() {
+      const searchMenuVisible = this.state.searchVisible;
 
-    if (!searchMenuVisible && !searchWidget.attrs.topic) {
-      return helper.attach("search-menu", {
-        contextEnabled: searchWidget.state.contextEnabled,
-        formFactor: "widget",
-      });
-    }
+      if (!searchMenuVisible && !this.attrs.topic) {
+        return this.attach("search-menu", {
+          contextEnabled: this.state.contextEnabled,
+          formFactor: "widget",
+        });
+      }
+    },
+
+    clearSearchWidgetContext() {
+      this.state.inTopicContext = false;
+    },
+
+    setTopicContext() {
+      this.state.inTopicContext = true;
+    },
   });
 });

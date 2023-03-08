@@ -28,7 +28,7 @@ $max-width: 600px;
   padding: 2.5em 0 3em;
   margin: 1em auto;
   @include breakpoint(tablet) {
-    padding: 1em 8px 2em;
+    padding: 1em 8px 1.25em;
     margin-top: 0.5em;
   }
 
@@ -40,6 +40,10 @@ $max-width: 600px;
   .search-menu {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    .browser-search-tip {
+      display: none;
+    }
     input[type="text"] {
       margin: 0;
       width: 100%;
@@ -53,7 +57,7 @@ $max-width: 600px;
     padding: 0;
     .searching {
       // spinner
-      top: 0.5em;
+      top: 0.4em;
       right: 2.25em;
     }
   }
@@ -76,7 +80,6 @@ $max-width: 600px;
     z-index: 2;
     order: 2;
     right: 0;
-    height: 100%;
     background: transparent;
     .discourse-no-touch & {
       &:hover {
@@ -88,22 +91,8 @@ $max-width: 600px;
     }
   }
 
-  .search-context,
-  .results {
-    margin: 0 auto;
-    max-width: $max-width;
-  }
-
-  .search-context {
-    position: absolute;
-    z-index: 10;
-    right: 0;
-    top: 2.67em;
-    display: inline-flex;
-    align-items: center;
-    label {
-      margin-right: 1em;
-    }
+  .search-input .btn.search-context {
+    margin: 0;
   }
 
   .results {
@@ -111,7 +100,6 @@ $max-width: 600px;
     background: var(--secondary);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     position: absolute;
-    width: $max-width;
     z-index: 9;
     margin-left: auto;
     margin-right: auto;
