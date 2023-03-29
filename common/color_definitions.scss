@@ -1,0 +1,20 @@
+$bg-light: null;
+$bg-dark: null;
+
+@if $background-image-light != "" {
+    $bg-light: url($background-image-light);
+    @if $background-image-dark != "" {
+        $bg-dark: url($background-image-dark);
+    } @else {
+        $bg-dark: url($background-image-light);
+    }
+} @else {
+    $bg-light: "none";
+    $bg-dark: "none";
+}
+
+$bg: dark-light-choose($bg-light, $bg-dark);
+
+:root {
+  --custom-bg: #{$bg};
+}
