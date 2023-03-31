@@ -22,7 +22,7 @@ background_image_light:
 background_image_dark:
   type: upload
   default: ""
-  description: background image for the banner when user is on on dark theme
+  description: background image for the banner on dark color palettes
 
 tile_background_image: false
 
