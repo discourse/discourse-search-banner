@@ -14,10 +14,15 @@ plugin_outlet:
     - above-main-container
     - below-site-header
 
-background_image:
+background_image_light:
   type: upload
   default: ""
-  description: background image for the banner
+  description: background image for the banner on light color palettes
+
+background_image_dark:
+  type: upload
+  default: ""
+  description: background image for the banner on dark color palettes
 
 tile_background_image: false
 

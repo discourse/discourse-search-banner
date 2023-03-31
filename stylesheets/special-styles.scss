@@ -2,8 +2,8 @@
   .custom-search-banner-wrap {
     padding: 0;
 
-    @if $background-image != "" {
-      background-image: url(#{$background-image});
+    @if $background-image-light != "" {
+      background-image: var(--custom-bg);
       padding: 4em 4em 4.25em;
 
       .search-input {

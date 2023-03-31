@@ -9,11 +9,8 @@ $max-width: 600px;
 }
 
 .search-banner {
-  @if $background-image != "none" {
-    background-image: url($background-image);
-  } @else {
-    background: none;
-  }
+  background-image: var(--custom-bg);
+
   @if $tile-background_image == "true" {
     background-size: auto;
   } @else {
