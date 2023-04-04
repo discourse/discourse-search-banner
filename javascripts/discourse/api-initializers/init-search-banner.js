@@ -40,7 +40,7 @@ export default apiInitializer("0.8", (api) => {
       }
     },
 
-    mouseDownOutside() {
+    clickOutside() {
       const formFactor = this.state.formFactor;
       if (formFactor === "menu") {
         return this.sendWidgetAction("toggleSearchMenu");
