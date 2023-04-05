@@ -1,5 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import { logSearchLinkClick } from "discourse/lib/search";
+import { iconNode } from "discourse-common/lib/icon-library";
 
 export default apiInitializer("0.8", (api) => {
   const enableConnectorName = settings.plugin_outlet;
@@ -111,10 +112,11 @@ export default apiInitializer("0.8", (api) => {
 
       if (formFactor === "widget") {
         contents.push(
-          this.attach("button", {
-            icon: "search",
-            className: "search-icon",
-            action: "showResults",
+          this.attach("link", {
+            href: this.fullSearchUrl({ expanded: true }),
+            contents: () => iconNode("search"),
+            className: "btn search-icon",
+            title: "search.open_advanced",
           })
         );
       }
