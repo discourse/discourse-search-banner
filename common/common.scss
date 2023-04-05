@@ -78,6 +78,9 @@ $max-width: 600px;
     order: 2;
     right: 0;
     background: transparent;
+    .d-icon {
+      margin: 0;
+    }
     .discourse-no-touch & {
       &:hover {
         background: transparent;
