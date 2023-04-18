@@ -2,6 +2,7 @@
   <div class="custom-search-banner">
     <div class="wrap custom-search-banner-wrap">
       <h1>{{html-safe (theme-i18n "search_banner.headline")}}</h1>
+      <PluginOutlet @name="search-banner-below-headline" />
       <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
       {{mount-widget widget="search-widget"}}
     </div>

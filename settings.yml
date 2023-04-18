@@ -4,6 +4,7 @@ show_on:
   choices:
     - top_menu
     - homepage
+    - discovery
     - all
   description: top_menu refers to the <a href="/admin/site_settings/category/all_results?filter=top_menu">top menu site setting</a>
 
