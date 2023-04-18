@@ -17,6 +17,8 @@ export default Component.extend({
       return this.siteSettings.top_menu
         .split("|")
         .any((m) => `discovery.${m}` === currentRouteName);
+    } else if (showOn === "discovery") {
+      return currentRouteName.startsWith("discovery.");
     } else {
       // "all"
       return (
