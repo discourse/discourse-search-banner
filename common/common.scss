@@ -72,20 +72,24 @@ $max-width: 600px;
     text-align: center;
   }
 
-  .search-icon {
+  .btn.search-icon {
     position: absolute;
     z-index: 2;
     order: 2;
     right: 0;
     background: transparent;
+    padding-top: 0.6em;
+    line-height: 1;
+    color: var(--primary-high);
     .d-icon {
-      margin: 0;
+      margin: 0 0 0 0.33em;
     }
     .discourse-no-touch & {
       &:hover {
         background: transparent;
+        color: var(--primary);
         .d-icon {
-          color: var(--primary-high);
+          color: currentColor;
         }
       }
     }

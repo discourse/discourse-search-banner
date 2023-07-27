@@ -1,6 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import { logSearchLinkClick } from "discourse/lib/search";
 import { iconNode } from "discourse-common/lib/icon-library";
+import { h } from "virtual-dom";
 
 export default apiInitializer("0.8", (api) => {
   const enableConnectorName = settings.plugin_outlet;
@@ -114,7 +115,13 @@ export default apiInitializer("0.8", (api) => {
         contents.push(
           this.attach("link", {
             href: this.fullSearchUrl({ expanded: true }),
-            contents: () => iconNode("search"),
+            contents: () => [
+              h(
+                "span",
+                I18n.t(themePrefix("search_banner.search_button_text"))
+              ),
+              iconNode("search"),
+            ],
             className: "btn search-icon",
             title: "search.open_advanced",
           })
