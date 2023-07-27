@@ -2,6 +2,7 @@ import { apiInitializer } from "discourse/lib/api";
 import { logSearchLinkClick } from "discourse/lib/search";
 import { iconNode } from "discourse-common/lib/icon-library";
 import { h } from "virtual-dom";
+import I18n from "I18n";
 
 export default apiInitializer("0.8", (api) => {
   const enableConnectorName = settings.plugin_outlet;
