@@ -3,3 +3,4 @@ en:
     headline: "Welcome to our community"
     subhead: "We're happy to have you here. If you need help, please search before you post."
     search_button_text: ""
+    placeholder: "Search our community!"

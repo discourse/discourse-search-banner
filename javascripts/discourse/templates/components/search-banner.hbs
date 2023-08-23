@@ -5,6 +5,7 @@
       <PluginOutlet @name="search-banner-below-headline" />
       <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
       {{mount-widget widget="search-widget"}}
+      <PluginOutlet @name="search-banner-below-input" />
     </div>
   </div>
 {{/if}}
