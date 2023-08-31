@@ -3,8 +3,16 @@ import { logSearchLinkClick } from "discourse/lib/search";
 import { iconNode } from "discourse-common/lib/icon-library";
 import { h } from "virtual-dom";
 import I18n from "I18n";
+import SearchBanner from "../components/search-banner";
 
-export default apiInitializer("0.8", (api) => {
+export default apiInitializer("1.14.0", (api) => {
+  api.renderInOutlet(
+    settings.plugin_outlet === "above-main-container"
+      ? "above-main-container"
+      : "below-site-header",
+    SearchBanner
+  );
+
   // Simplified version of header search theme component
   const searchMenuWidget = api.container.factoryFor("widget:search-menu");
   const corePanelContents = searchMenuWidget.class.prototype["panelContents"];
