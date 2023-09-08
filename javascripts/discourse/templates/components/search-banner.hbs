@@ -1,10 +1,14 @@
-{{#if shouldDisplay}}
-  <div class="custom-search-banner">
+{{#if this.shouldDisplay}}
+  <div
+    class="custom-search-banner"
+    {{did-insert this.didInsert}}
+    {{will-destroy this.willDestroy}}
+  >
     <div class="wrap custom-search-banner-wrap">
       <h1>{{html-safe (theme-i18n "search_banner.headline")}}</h1>
       <PluginOutlet @name="search-banner-below-headline" />
       <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
-      {{mount-widget widget="search-widget"}}
+      <MountWidget @widget="search-widget" />
       <PluginOutlet @name="search-banner-below-input" />
     </div>
   </div>
