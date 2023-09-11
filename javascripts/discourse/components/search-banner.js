@@ -1,5 +1,4 @@
-import { action, computed } from "@ember/object";
-import { and } from "@ember/object/computed";
+import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 import Component from "@glimmer/component";
 import { defaultHomepage } from "discourse/lib/utilities";
@@ -9,9 +8,6 @@ export default class SearchBanner extends Component {
   @service siteSettings;
   @service currentUser;
 
-  @and("displayForUser", "displayForRoute") shouldDisplay;
-
-  @computed("router.currentRouteName")
   get displayForRoute() {
     const showOn = settings.show_on;
     const currentRouteName = this.router.currentRouteName;
@@ -33,7 +29,6 @@ export default class SearchBanner extends Component {
     }
   }
 
-  @computed("currentUser")
   get displayForUser() {
     const showFor = settings.show_for;
     return (
@@ -41,6 +36,10 @@ export default class SearchBanner extends Component {
       (showFor === "logged_out" && !this.currentUser) ||
       (showFor === "logged_in" && this.currentUser)
     );
+  }
+
+  get shouldDisplay() {
+    return this.displayForRoute && this.displayForUser;
   }
 
   @action
