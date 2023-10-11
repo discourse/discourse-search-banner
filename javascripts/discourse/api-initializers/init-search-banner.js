@@ -10,7 +10,7 @@ export default apiInitializer("1.14.0", (api) => {
     settings.plugin_outlet === "above-main-container"
       ? "above-main-container"
       : "below-site-header",
-    SearchBanner,
+    SearchBanner
   );
 
   // Simplified version of header search theme component
@@ -115,13 +115,13 @@ export default apiInitializer("1.14.0", (api) => {
             contents: () => [
               h(
                 "span",
-                I18n.t(themePrefix("search_banner.search_button_text")),
+                I18n.t(themePrefix("search_banner.search_button_text"))
               ),
               iconNode("search"),
             ],
             className: "btn search-icon",
             title: "search.open_advanced",
-          }),
+          })
         );
       }
 
