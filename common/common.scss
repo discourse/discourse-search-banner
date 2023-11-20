@@ -101,9 +101,9 @@ $max-width: 600px;
       background-color: var(--tertiary-hover);
     }
     .d-icon {
-      color: var(--secondary)
+      color: var(--secondary);
     }
-    + .search-input #search-term[type=text] {
+    + .search-input #search-term[type="text"] {
       padding-left: 0.5em;
     }
   }
