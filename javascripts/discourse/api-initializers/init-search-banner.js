@@ -108,18 +108,23 @@ export default apiInitializer("1.14.0", (api) => {
         this.state.showHeaderResults === true;
       let contents = [];
 
+      let buttonClass =
+        I18n.t(themePrefix("search_banner.search_button_text")) === ""
+          ? "btn search-icon"
+          : "btn search-icon has-search-button-text";
+
       if (formFactor === "widget") {
         contents.push(
           this.attach("link", {
             href: this.fullSearchUrl({ expanded: true }),
             contents: () => [
+              iconNode("search"),
               h(
                 "span",
                 I18n.t(themePrefix("search_banner.search_button_text"))
               ),
-              iconNode("search"),
             ],
-            className: "btn search-icon",
+            className: buttonClass,
             title: "search.open_advanced",
           })
         );

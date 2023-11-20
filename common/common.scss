@@ -74,7 +74,7 @@ $max-width: 600px;
     text-align: center;
   }
 
-  .btn.search-icon {
+  .btn.search-icon:not(.has-search-button-text) {
     position: absolute;
     z-index: 2;
     background: transparent;
@@ -89,6 +89,22 @@ $max-width: 600px;
           color: currentColor;
         }
       }
+    }
+  }
+  .btn.search-icon.has-search-button-text {
+    order: 2;
+    margin-left: 0.5em;
+    column-gap: 0.5em;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    &:hover {
+      background-color: var(--tertiary-hover);
+    }
+    .d-icon {
+      color: var(--secondary)
+    }
+    + .search-input #search-term[type=text] {
+      padding-left: 0.5em;
     }
   }
 
