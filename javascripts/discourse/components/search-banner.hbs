@@ -11,7 +11,9 @@
         <h1>{{html-safe (theme-i18n "search_banner.headline")}}</h1>
         <PluginOutlet @name="search-banner-below-headline" />
         <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
-        <MountWidget @widget="search-widget" />
+        <div class="search-menu">
+          <SearchMenu />
+        </div>
         <PluginOutlet @name="search-banner-below-input" />
       </div>
     </div>

@@ -34,21 +34,21 @@ $max-width: 600px;
     max-width: $max-width;
   }
 
-  .search-menu {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    .d-icon-search {
-      margin: 0;
-    }
-    .browser-search-tip {
-      display: none;
-    }
-    .search-input input#search-term[type="text"] {
-      margin: 0;
-      width: 100%;
-      padding-left: 2.25em;
-    }
+  .menu-panel-results .menu-panel {
+    position: unset;
+    padding: 0;
+  }
+
+  .d-icon-search {
+    margin: 0;
+  }
+  .browser-search-tip {
+    display: none;
+  }
+  .search-input input#search-term[type="text"] {
+    margin: 0;
+    width: 100%;
+    // padding: 0;
   }
 
   .search-input {
@@ -75,12 +75,12 @@ $max-width: 600px;
   }
 
   .btn.search-icon:not(.has-search-button-text) {
-    position: absolute;
     z-index: 2;
     background: transparent;
     line-height: 1;
     color: var(--primary-medium);
     height: 100%;
+    padding-right: 0.25em;
     .discourse-no-touch & {
       &:hover {
         background: transparent;
@@ -97,19 +97,24 @@ $max-width: 600px;
     column-gap: 0.5em;
     background-color: var(--tertiary);
     color: var(--secondary);
+    flex: none;
     &:hover {
       background-color: var(--tertiary-hover);
     }
     .d-icon {
       color: var(--secondary);
     }
-    + .search-input #search-term[type="text"] {
-      padding-left: 0.5em;
-    }
   }
 
-  .search-input .btn.search-context {
-    margin: 0;
+  .search-input .search-context {
+    // margin-right: 1em !important;
+  }
+
+  // hide the search icon when a search context is selected
+  // eg when searching in a topic
+  .search-input .search-context + .search-icon:not(.has-search-button-text),
+  .search-input .search-context ~ .search-icon:not(.has-search-button-text) {
+    display: none;
   }
 
   .results {
