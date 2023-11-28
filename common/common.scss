@@ -39,13 +39,17 @@ $max-width: 600px;
     max-width: $max-width;
   }
 
+  .search-menu {
+    display: flex;
+
+    .search-menu-container {
+      width: 100%;
+    }
+  }
+
   .menu-panel-results .menu-panel {
     position: unset;
     padding: 0;
-  }
-
-  .search-menu-container {
-    display: flex;
   }
 
   .d-icon-search {

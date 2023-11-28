@@ -13,6 +13,12 @@
         <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
         <div class="search-menu">
           <SearchMenu />
+          {{#if this.buttonText}}
+            <SearchIcon
+              @buttonText={{this.buttonText}}
+              @buttonClass={{"has-search-button-text"}}
+            />
+          {{/if}}
         </div>
         <PluginOutlet @name="search-banner-below-input" />
       </div>

@@ -2,6 +2,7 @@ import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 import Component from "@glimmer/component";
 import { defaultHomepage } from "discourse/lib/utilities";
+import I18n from "discourse-i18n";
 
 export default class SearchBanner extends Component {
   @service router;
@@ -36,6 +37,10 @@ export default class SearchBanner extends Component {
       (showFor === "logged_out" && !this.currentUser) ||
       (showFor === "logged_in" && this.currentUser)
     );
+  }
+
+  get buttonText() {
+    return I18n.t(themePrefix("search_banner.search_button_text"));
   }
 
   get shouldDisplay() {
