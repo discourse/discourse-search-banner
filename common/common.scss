@@ -42,6 +42,9 @@ $max-width: 600px;
   .menu-panel-results .menu-panel {
     position: unset;
     padding: 0;
+    &.slide-in {
+      height: auto;
+    }
   }
 
   .search-menu-container {
