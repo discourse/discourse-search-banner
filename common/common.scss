@@ -19,6 +19,11 @@ $max-width: 600px;
   }
 }
 
+// hide search icon from default search menu
+.search-menu.glimmer-search-menu .search-icon {
+  display: none;
+}
+
 .custom-search-banner-wrap {
   box-sizing: border-box;
   position: relative;
@@ -48,7 +53,6 @@ $max-width: 600px;
   .search-input input#search-term[type="text"] {
     margin: 0;
     width: 100%;
-    // padding: 0;
   }
 
   .search-input {
@@ -104,10 +108,6 @@ $max-width: 600px;
     .d-icon {
       color: var(--secondary);
     }
-  }
-
-  .search-input .search-context {
-    // margin-right: 1em !important;
   }
 
   // hide the search icon when a search context is selected
