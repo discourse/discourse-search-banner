@@ -1,6 +1,6 @@
-import { acceptance, query } from "discourse/tests/helpers/qunit-helpers";
 import { click, fillIn, triggerKeyEvent, visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { acceptance, query } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Discourse Search Banner", function (needs) {
   needs.user({ admin: true, experimental_search_menu_groups_enabled: true });

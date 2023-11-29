@@ -1,7 +1,6 @@
 import Component from "@glimmer/component";
 import I18n from "discourse-i18n";
 import SearchIcon from "../../components/search-icon";
-import not from "truth-helpers/helpers/not";
 
 export default class SearchIconBeforeTerm extends Component {
   get searchButtonText() {
@@ -9,8 +8,8 @@ export default class SearchIconBeforeTerm extends Component {
   }
 
   <template>
-    {{#if (not this.searchButtonText)}}
+    {{#unless this.searchButtonText}}
       <SearchIcon />
-    {{/if}}
+    {{/unless}}
   </template>
 }

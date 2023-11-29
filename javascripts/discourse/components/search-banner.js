@@ -1,6 +1,6 @@
+import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
-import Component from "@glimmer/component";
 import { defaultHomepage } from "discourse/lib/utilities";
 import I18n from "discourse-i18n";
 
@@ -56,6 +56,7 @@ export default class SearchBanner extends Component {
 
   @action
   willDestroy() {
+    super.willDestroy(...arguments);
     document.documentElement.classList.remove("display-search-banner");
   }
 }
