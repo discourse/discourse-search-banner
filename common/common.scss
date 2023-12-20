@@ -14,9 +14,11 @@ $max-width: 600px;
   @if $tile-background_image == "true" {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   } @else {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
