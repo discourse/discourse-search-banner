@@ -8,4 +8,6 @@ export default apiInitializer("1.14.0", (api) => {
       : "below-site-header",
     SearchBanner
   );
+
+  api.forceDropdownForMenuPanels("search-menu-panel");
 });
