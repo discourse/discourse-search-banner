@@ -34,7 +34,7 @@ acceptance("Discourse Search Banner", function (needs) {
 
     await triggerKeyEvent(
       ".custom-search-banner #search-term",
-      "keyup",
+      "keydown",
       "Escape"
     );
     assert.dom(".custom-search-banner .results").doesNotExist();
