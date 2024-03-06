@@ -19,8 +19,8 @@ $max-width: 600px;
   }
 }
 
-// hide search icon from default search menu
-.search-menu.glimmer-search-menu .search-icon {
+// hide search icon from header search menu
+.search-menu .search-menu-panel .search-icon {
   display: none;
 }
 
