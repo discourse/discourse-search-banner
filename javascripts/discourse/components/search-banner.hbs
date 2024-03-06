@@ -12,6 +12,9 @@
         <PluginOutlet @name="search-banner-below-headline" />
         <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
         <div class="search-menu">
+          {{#unless this.buttonText}}
+            <SearchIcon />
+          {{/unless}}
           <SearchMenu />
           {{#if this.buttonText}}
             <SearchIcon

@@ -41,6 +41,7 @@ $max-width: 600px;
 
   .search-menu {
     display: flex;
+    position: relative;
 
     .search-menu-container {
       width: 100%;
@@ -93,6 +94,7 @@ $max-width: 600px;
     color: var(--primary-medium);
     height: 100%;
     padding-right: 0.25em;
+    position: absolute;
     .discourse-no-touch & {
       &:hover {
         background: transparent;
@@ -101,6 +103,12 @@ $max-width: 600px;
           color: currentColor;
         }
       }
+    }
+    + .search-menu-container .search-input {
+      padding-left: 1.75em;
+    }
+    + .search-menu-container .search-input .search-context {
+      margin-left: 4px;
     }
   }
   .btn.search-icon.has-search-button-text {
