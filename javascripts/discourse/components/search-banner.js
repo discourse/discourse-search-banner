@@ -49,8 +49,8 @@ export default class SearchBanner extends Component {
     if (buttonText.includes("theme_translations")) {
       return false;
     }
-  
-    return  I18n.t(buttonText);
+
+    return I18n.t(buttonText);
   }
 
   get shouldDisplay() {
