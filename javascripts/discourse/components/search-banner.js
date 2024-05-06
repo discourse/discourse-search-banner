@@ -40,8 +40,7 @@ export default class SearchBanner extends Component {
   }
 
   get buttonText() {
-    const buttonText = themePrefix("search_banner.search_button_text");
-
+    const buttonText = I18n.t(themePrefix("search_banner.search_button_text"));
     // this is required for when the English (US) locale is empty
     // and the site locale is set to another language
     // otherwise the English (US) fallback key is rendered as the button text
@@ -50,7 +49,7 @@ export default class SearchBanner extends Component {
       return false;
     }
 
-    return I18n.t(buttonText);
+    return buttonText;
   }
 
   get shouldDisplay() {
