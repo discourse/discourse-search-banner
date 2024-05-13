@@ -45,6 +45,7 @@ $max-width: 600px;
 
     .search-menu-container {
       width: 100%;
+      min-width: 0;
     }
   }
 
@@ -59,16 +60,11 @@ $max-width: 600px;
   .browser-search-tip {
     display: none;
   }
-  .search-input input#search-term[type="text"] {
-    margin: 0;
-    width: 100%;
-  }
 
   .search-input {
-    flex: 1 1 auto;
-    margin: 0;
-    .searching {
-      display: flex;
+    #search-term {
+      min-width: 0;
+      flex: 1 1;
     }
   }
 
@@ -124,13 +120,6 @@ $max-width: 600px;
     }
   }
 
-  // hide the search icon when a search context is selected
-  // eg when searching in a topic
-  .search-input .search-context + .search-icon:not(.has-search-button-text),
-  .search-input .search-context ~ .search-icon:not(.has-search-button-text) {
-    display: none;
-  }
-
   .results {
     box-sizing: border-box;
     background: var(--secondary);
@@ -154,10 +143,6 @@ $max-width: 600px;
     .d-icon-search {
       display: none;
     }
-  }
-
-  .searching a.show-advanced-search {
-    display: none;
   }
 
   .search-link .d-icon {
