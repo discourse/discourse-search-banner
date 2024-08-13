@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  search_banner:
+    headline: "Boas-vindas à nossa comunidade"
+    subhead: "Estamos contentes que você está aqui. Se precisar de ajuda, pesquise antes de postar."

@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 fi:
+  search_banner:
+    headline: "Tervetuloa yhteisöömme"
+    subhead: "Mukavaa, että olet täällä. Jos tarvitset apua, hae ennen kuin kirjoitat viestin."
