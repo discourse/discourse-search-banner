@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  search_banner:
+    headline: "欢迎访问我们的社区"
+    subhead: "很高兴在这里见到您。如果您需要帮助，请先搜索，然后再发帖。"

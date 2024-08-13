@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  search_banner:
+    headline: "Topluluğumuza hoş geldiniz"
+    subhead: "Burada olmanızdan mutluluk duyuyoruz. Yardıma ihtiyacınız varsa lütfen gönderi paylaşmadan önce arama yapın."
