@@ -9,6 +9,12 @@ export default class SearchBanner extends Component {
   @service siteSettings;
   @service currentUser;
 
+  @action
+  willDestroy() {
+    super.willDestroy(...arguments);
+    document.documentElement.classList.remove("display-search-banner");
+  }
+
   get displayForRoute() {
     const showOn = settings.show_on;
     const currentRouteName = this.router.currentRouteName;
@@ -61,11 +67,5 @@ export default class SearchBanner extends Component {
     // Setting a class on <html> from a component is not great
     // but we need it for backwards compatibility
     document.documentElement.classList.add("display-search-banner");
-  }
-
-  @action
-  willDestroy() {
-    super.willDestroy(...arguments);
-    document.documentElement.classList.remove("display-search-banner");
   }
 }
