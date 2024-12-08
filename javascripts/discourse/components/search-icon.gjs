@@ -9,7 +9,7 @@ export default class SearchIcon extends Component {
 
   <template>
     <DButton
-      @icon="search"
+      @icon="magnifying-glass"
       @translatedLabel={{@buttonText}}
       @title="search.open_advanced"
       class={{concatClass "btn search-icon" @buttonClass}}
