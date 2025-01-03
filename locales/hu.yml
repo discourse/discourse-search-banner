@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 hu:
+  search_banner:
+    headline: "Üdvözöljük közösségünkben"
+    subhead: "Örülünk, hogy itt van. Ha segítségre van szüksége, keressen, mielőtt létrehoz egy bejegyzést."
