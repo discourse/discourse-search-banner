@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
-import I18n from "discourse-i18n";
+import { i18n } from "discourse-i18n";
 
 export default class SearchBanner extends Component {
   @service router;
@@ -46,7 +46,7 @@ export default class SearchBanner extends Component {
   }
 
   get buttonText() {
-    const buttonText = I18n.t(themePrefix("search_banner.search_button_text"));
+    const buttonText = i18n(themePrefix("search_banner.search_button_text"));
     // this is required for when the English (US) locale is empty
     // and the site locale is set to another language
     // otherwise the English (US) fallback key is rendered as the button text
