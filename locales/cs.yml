@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 cs:
+  search_banner:
+    headline: "Vítejte v naší komunitě"
+    subhead: "Jsme rádi, že vás tu máme. Pokud potřebujete pomoc, zkuste před přispěním hledat."
