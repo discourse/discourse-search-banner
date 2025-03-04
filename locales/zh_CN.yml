@@ -1,10 +1,4 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
-zh_CN:
+zh-CN:
   search_banner:
     headline: "欢迎访问我们的社区"
     subhead: "很高兴在这里见到您。如果您需要帮助，请先搜索，然后再发帖。"
