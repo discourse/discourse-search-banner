@@ -163,5 +163,9 @@ $max-width: 600px;
   }
 }
 
+.welcome-banner {
+  display: none;
+}
+
 // these are add-on styles controlled by settings
 @import "special-styles";
