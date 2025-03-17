@@ -5,7 +5,7 @@ RSpec.describe "Viewing the search banner", type: :system do
   fab!(:topic)
   let(:topic_page) { PageObjects::Pages::Topic.new }
 
-  xit "should display the search banner below the site header when `plugin_outlet` theme setting is set to `below-site-header`" do
+  it "should display the search banner below the site header when `plugin_outlet` theme setting is set to `below-site-header`" do
     theme.update_setting(:plugin_outlet, "below-site-header")
     theme.save!
 
@@ -15,7 +15,7 @@ RSpec.describe "Viewing the search banner", type: :system do
     expect(page).to_not have_css("#main-outlet .custom-search-banner")
   end
 
-  xit "should display the search banner above the main container when `plugin_outlet` theme setting is set to `above-main-container`" do
+  it "should display the search banner above the main container when `plugin_outlet` theme setting is set to `above-main-container`" do
     theme.update_setting(:plugin_outlet, "above-main-container")
     theme.save!
 
@@ -24,7 +24,7 @@ RSpec.describe "Viewing the search banner", type: :system do
     expect(page).to have_css("#main-outlet .custom-search-banner")
   end
 
-  xit "should display the search icon when searching within a topic when search button text is present" do
+  it "should display the search icon when searching within a topic when search button text is present" do
     theme.update_setting(:show_on, "all")
     theme.update_translation("search_banner.search_button_text", "Foo")
     theme.save!

@@ -2,10 +2,10 @@ import { click, fillIn, triggerKeyEvent, visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import { acceptance, query } from "discourse/tests/helpers/qunit-helpers";
 
-acceptance("Discourse Search Banner", function (needs) {
+acceptance("Discourse Advanced Search Banner", function (needs) {
   needs.user({ admin: true, experimental_search_menu_groups_enabled: true });
 
-  test("Search Banner is present", async function (assert) {
+  test("Advanced Search Banner is present", async function (assert) {
     await visit("/");
     assert.dom(".custom-search-banner input#search-term").exists();
   });

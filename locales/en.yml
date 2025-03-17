@@ -3,3 +3,5 @@ en:
     headline: "Welcome to our community"
     subhead: "We're happy to have you here. If you need help, please search before you post."
     search_button_text: ""
+  theme_metadata:
+    description: "Advanced Search Banner puts a search bar along with optional headline and subhead text in a banner above the main topic list navigation"
