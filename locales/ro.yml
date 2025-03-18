@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 ro:
+  theme_metadata:
+    description: "Bannerul de căutare avansată plasează o bară de căutare împreună cu textul opțional al titlului și subtitlului într-un banner deasupra listei de navigare a subiectului principal"
