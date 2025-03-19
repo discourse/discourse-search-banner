@@ -3,6 +3,7 @@ $bg-dark: "none";
 
 @if $background-image-light != "" {
   $bg-light: url($background-image-light);
+
   @if $background-image-dark != "" {
     $bg-dark: url($background-image-dark);
   } @else {
