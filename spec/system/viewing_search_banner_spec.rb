@@ -32,7 +32,7 @@ RSpec.describe "Viewing the search banner", type: :system do
     topic_page.visit_topic(topic)
     expect(topic_page).to have_css(".custom-search-banner")
 
-    topic_page.find(".custom-search-banner input#search-term").fill_in(with: "test")
+    topic_page.find(".custom-search-banner input#custom-search-input").fill_in(with: "test")
     topic_page.find(".custom-search-banner .results li:nth-child(2) a").click
 
     expect(topic_page).to have_css(".custom-search-banner .search-context")

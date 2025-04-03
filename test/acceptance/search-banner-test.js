@@ -7,7 +7,7 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
 
   test("Advanced Search Banner is present", async function (assert) {
     await visit("/");
-    assert.dom(".custom-search-banner input#search-term").exists();
+    assert.dom(".custom-search-banner input#custom-search-input").exists();
   });
 
   test("is only present on intended routes", async function (assert) {
@@ -17,8 +17,8 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
 
   test("it closes the search menu when clicking outside", async function (assert) {
     await visit("/");
-    await click(".custom-search-banner input#search-term");
-    await fillIn(".custom-search-banner input#search-term", "test");
+    await click(".custom-search-banner input#custom-search-input");
+    await fillIn(".custom-search-banner input#custom-search-input", "test");
     assert.dom(".custom-search-banner .results").exists();
 
     // select a element to simulate clicking outside the search banner
@@ -28,12 +28,12 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
 
   test("pressing escape closes the search menu", async function (assert) {
     await visit("/");
-    await click(".custom-search-banner input#search-term");
-    await fillIn(".custom-search-banner input#search-term", "test");
+    await click(".custom-search-banner input#custom-search-input");
+    await fillIn(".custom-search-banner input#custom-search-input", "test");
     assert.dom(".custom-search-banner .results").exists();
 
     await triggerKeyEvent(
-      ".custom-search-banner #search-term",
+      ".custom-search-banner #custom-search-input",
       "keydown",
       "Escape"
     );
@@ -43,9 +43,9 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
   test("searching for a term in the search menu fills in the search banner search input", async function (assert) {
     await visit("/");
     await click("#search-button");
-    await fillIn("#search-term", "test");
+    await fillIn("#custom-search-input", "test");
     assert
-      .dom(".custom-search-banner input#search-term")
+      .dom(".custom-search-banner input#custom-search-input")
       .hasValue("test", "search inputs have matching terms");
   });
 
@@ -53,11 +53,11 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
     const container = ".custom-search-banner .results";
 
     await visit("/");
-    await click(".custom-search-banner input#search-term");
-    await fillIn(".custom-search-banner input#search-term", "test");
+    await click(".custom-search-banner input#custom-search-input");
+    await fillIn(".custom-search-banner input#custom-search-input", "test");
 
     await triggerKeyEvent(
-      ".custom-search-banner #search-term",
+      ".custom-search-banner #custom-search-input",
       "keyup",
       "Enter"
     );

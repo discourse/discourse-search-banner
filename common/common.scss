@@ -2,6 +2,10 @@
 
 $max-width: 600px;
 
+.welcome-banner {
+  display: none;
+}
+
 .display-search-banner {
   #main-outlet {
     padding-top: 0;
@@ -64,7 +68,7 @@ $max-width: 600px;
   }
 
   .search-input {
-    #search-term {
+    input.search-term__input {
       min-width: 0;
       flex: 1 1;
     }
@@ -175,10 +179,6 @@ $max-width: 600px;
   span.keyword {
     color: var(--primary);
   }
-}
-
-.welcome-banner {
-  display: none;
 }
 
 // these are add-on styles controlled by settings
