@@ -15,7 +15,7 @@
           {{#unless this.buttonText}}
             <SearchIcon />
           {{/unless}}
-          <SearchMenu />
+          <SearchMenu @searchInputId="custom-search-input" />
           {{#if this.buttonText}}
             <SearchIcon
               @buttonText={{this.buttonText}}
