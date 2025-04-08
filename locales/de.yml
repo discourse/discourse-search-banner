@@ -8,3 +8,5 @@ de:
   search_banner:
     headline: "Willkommen in unserer Community"
     subhead: "Wir freuen uns, dass du hier bist. Wenn du Hilfe benötigst, suche bitte, bevor du einen Beitrag erstellst."
+  theme_metadata:
+    description: "Das Advanced Search Banner platziert eine Suchleiste zusammen mit optionalen Überschriften und Unterüberschriften in einem Banner über der Hauptnavigation der Themenliste"
