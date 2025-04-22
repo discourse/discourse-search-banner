@@ -1,3 +1,7 @@
+.welcome-banner:not(.below-site-header-outlet, .above-main-container-outlet) {
+  display: none;
+}
+
 .welcome-banner {
   .btn.search-icon:not(.has-search-button-text) {
     z-index: 2;
