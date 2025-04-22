@@ -1,17 +1,18 @@
 {{#if this.shouldDisplay}}
   <div
-    class="{{concat (theme-setting 'plugin_outlet') '-outlet'}} search-banner"
+    class="{{concat (theme-setting 'plugin_outlet') '-outlet'}}
+      search-banner welcome-banner"
   >
     <div
-      class="custom-search-banner"
+      class="custom-search-banner welcome-banner__inner-wrapper"
       {{did-insert this.didInsert}}
       {{will-destroy this.willDestroy}}
     >
-      <div class="wrap custom-search-banner-wrap">
+      <div class="custom-search-banner-wrap welcome-banner__wrap">
         <h1>{{html-safe (theme-i18n "search_banner.headline")}}</h1>
         <PluginOutlet @name="search-banner-below-headline" />
         <p>{{html-safe (theme-i18n "search_banner.subhead")}}</p>
-        <div class="search-menu">
+        <div class="search-menu welcome-banner__search-menu">
           {{#unless this.buttonText}}
             <SearchIcon />
           {{/unless}}

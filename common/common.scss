@@ -1,15 +1,10 @@
-@import "common/foundation/mixins";
+// these are add-on styles controlled by settings
+@import "special-styles";
 
-$max-width: 600px;
-
-.welcome-banner {
+.welcome-banner:not(.below-site-header-outlet, .above-main-container-outlet),
+.header-search--enabled .floating-search-input-wrapper,
+.search-header--visible .floating-search-input-wrapper {
   display: none;
-}
-
-.display-search-banner {
-  #main-outlet {
-    padding-top: 0;
-  }
 }
 
 .search-banner {
@@ -23,71 +18,7 @@ $max-width: 600px;
   }
 }
 
-// hide search icon from default search menu
-.search-menu.glimmer-search-menu .search-icon {
-  display: none;
-}
-
-.custom-search-banner-wrap {
-  box-sizing: border-box;
-  position: relative;
-  padding: 2.5em 0 3em;
-  margin: 1em auto;
-
-  @include breakpoint(tablet) {
-    padding: 1em 8px 1.25em;
-    margin-top: 0.5em;
-  }
-
-  > div {
-    margin: 0 auto;
-    max-width: $max-width;
-  }
-
-  .search-menu {
-    display: flex;
-    position: relative;
-
-    .search-menu-container {
-      width: 100%;
-      min-width: 0;
-    }
-  }
-
-  .menu-panel-results .menu-panel {
-    position: unset;
-    padding: 0;
-  }
-
-  .d-icon-search {
-    margin: 0;
-  }
-
-  .browser-search-tip {
-    display: none;
-  }
-
-  .search-input {
-    input.search-term__input {
-      min-width: 0;
-      flex: 1 1;
-    }
-  }
-
-  h1 {
-    font-size: var(--font-up-6);
-    line-height: $line-height-medium;
-
-    @include breakpoint(tablet) {
-      font-size: var(--font-up-4);
-    }
-  }
-
-  h1,
-  p {
-    text-align: center;
-  }
-
+.welcome-banner {
   .btn.search-icon:not(.has-search-button-text) {
     z-index: 2;
     background: transparent;
@@ -128,58 +59,20 @@ $max-width: 600px;
   }
 
   .btn.search-icon.has-search-button-text {
-    order: 2;
     margin-left: 0.5em;
     column-gap: 0.5em;
     background-color: var(--tertiary);
     color: var(--secondary);
-    flex: none;
+    position: unset;
+    height: unset;
 
     &:hover {
       background-color: var(--tertiary-hover);
+      color: var(--secondary);
     }
 
     .d-icon {
       color: var(--secondary);
     }
   }
-
-  .results {
-    box-sizing: border-box;
-    background: var(--secondary);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    z-index: 9;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    top: 2.75em;
-    right: 0;
-    padding: 0.5em;
-
-    @include breakpoint(mobile-extra-large) {
-      width: 100%;
-    }
-
-    ul,
-    ol {
-      list-style-type: none;
-      margin: 0;
-    }
-
-    .d-icon-search {
-      display: none;
-    }
-  }
-
-  .search-link .d-icon {
-    color: var(--primary-medium);
-  }
-
-  span.keyword {
-    color: var(--primary);
-  }
 }
-
-// these are add-on styles controlled by settings
-@import "special-styles";
