@@ -1,6 +1,10 @@
 @if $special-style == "big search, no text" {
+  .welcome-banner {
+    margin-bottom: 0;
+  }
+
   .custom-search-banner-wrap {
-    padding: 0;
+    padding: 1em;
 
     @if $background-image-light != "" {
       background-image: var(--custom-bg);
@@ -14,6 +18,13 @@
     .results {
       max-width: unset;
       width: 100%;
+      font-size: var(--font-down-3);
+      top: 3.45em;
+      padding: 0;
+
+      .search-result-topic .first-line {
+        font-size: var(--font-up-1);
+      }
     }
 
     .search-context {
@@ -29,16 +40,6 @@
     > div {
       font-size: var(--font-up-4);
       max-width: unset;
-    }
-
-    .results {
-      font-size: var(--font-down-3);
-      top: 3.45em;
-      padding: 0;
-
-      .search-result-topic .first-line {
-        font-size: var(--font-up-1);
-      }
     }
 
     .blurb {
@@ -61,6 +62,7 @@
     .search-menu-recent {
       font-size: var(--font-down-1);
       margin-top: 0;
+
       li:last-child {
         .search-link {
           margin-bottom: 0;
@@ -74,7 +76,7 @@
     }
 
     .no-results {
-      padding: 1em;
+      padding: 1em !important;
     }
 
     .results > * {
@@ -100,6 +102,7 @@
 
       .show-more {
         margin-top: 0.33em;
+
         .search-link {
           margin-bottom: 0;
         }
@@ -112,10 +115,6 @@
 
     .search-input .searching {
       top: 0.45em;
-    }
-
-    .no-results {
-      padding: 1em !important;
     }
   }
 }

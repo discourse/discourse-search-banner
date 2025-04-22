@@ -1,5 +1,19 @@
+// these are add-on styles controlled by settings
+@import "special-styles";
+
 .welcome-banner:not(.below-site-header-outlet, .above-main-container-outlet) {
   display: none;
+}
+
+.search-banner {
+  background-image: var(--custom-bg);
+
+  @if $tile-background_image == "true" {
+    background-size: auto;
+  } @else {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .welcome-banner {
