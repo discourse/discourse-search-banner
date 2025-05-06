@@ -90,3 +90,8 @@
     padding: 2.5em var(--d-wrap-padding-h) 3em;
   }
 }
+
+// fixes core style clash that hides the banner on narrow screens
+.custom-search-banner .welcome-banner__wrap .search-menu {
+  display: flex;
+}
