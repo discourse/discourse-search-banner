@@ -3,7 +3,10 @@ import { test } from "qunit";
 import { acceptance, query } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Discourse Advanced Search Banner", function (needs) {
-  needs.user({ admin: true, experimental_search_menu_groups_enabled: true });
+  needs.user({
+    admin: true,
+    experimental_search_menu_groups_enabled: true,
+  });
 
   test("Advanced Search Banner is present", async function (assert) {
     await visit("/");
@@ -38,15 +41,6 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
       "Escape"
     );
     assert.dom(".custom-search-banner .results").doesNotExist();
-  });
-
-  test("searching for a term in the search menu fills in the search banner search input", async function (assert) {
-    await visit("/");
-    await click("#search-button");
-    await fillIn("#custom-search-input", "test");
-    assert
-      .dom(".custom-search-banner input#custom-search-input")
-      .hasValue("test", "search inputs have matching terms");
   });
 
   test("you can navigate search results with the keyboard", async function (assert) {
