@@ -60,7 +60,11 @@
     }
   }
 
-  h1 {
+  .custom-search-banner-headline {
+    font-family: var(--heading-font-family);
+    font-size: var(--font-up-5);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
     text-align: center;
   }
 
