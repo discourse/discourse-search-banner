@@ -88,7 +88,9 @@ export default class SearchBanner extends Component {
           {{willDestroy this.willDestroy}}
         >
           <div class="wrap custom-search-banner-wrap welcome-banner__wrap">
-            <h1>{{htmlSafe (i18n (themePrefix "search_banner.headline"))}}</h1>
+            <div class="custom-search-banner-headline">
+              {{htmlSafe (i18n (themePrefix "search_banner.headline"))}}
+            </div>
             <PluginOutlet @name="search-banner-below-headline" />
             <p>{{htmlSafe (i18n (themePrefix "search_banner.subhead"))}}</p>
             <div class="search-menu welcome-banner__search-menu">
