@@ -25,7 +25,7 @@ acceptance("Discourse Advanced Search Banner", function (needs) {
     assert.dom(".custom-search-banner .results").exists();
 
     // select a element to simulate clicking outside the search banner
-    await click(".custom-search-banner h1");
+    await click(".custom-search-banner .custom-search-banner-headline");
     assert.dom(".custom-search-banner .results").doesNotExist();
   });
 
