@@ -88,10 +88,10 @@
 }
 
 .custom-search-banner-wrap {
-  padding: 1em var(--d-wrap-padding-h) 1.25em;
+  padding: 1em 0.67em 1.25em;
 
   @include viewport.from(sm) {
-    padding: 2.5em var(--d-wrap-padding-h) 3em;
+    padding: 2.5em 0.67em 3em;
   }
 }
 
