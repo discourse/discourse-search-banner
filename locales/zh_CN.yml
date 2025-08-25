@@ -8,3 +8,5 @@ zh_CN:
   search_banner:
     headline: "欢迎访问我们的社区"
     subhead: "很高兴在这里见到您。如果您需要帮助，请先搜索，然后再发帖。"
+  theme_metadata:
+    description: "高级搜索横幅会在主要话题列表导航上方的横幅中放置一个搜索栏以及可选标题和副标题文本"
