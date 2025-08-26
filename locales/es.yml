@@ -8,3 +8,5 @@ es:
   search_banner:
     headline: "Te damos la bienvenida a nuestra comunidad"
     subhead: "Estamos encantados de tenerte aquí. Si necesitas ayuda, busca antes de publicar."
+  theme_metadata:
+    description: "El banner de búsqueda avanzado coloca una barra de búsqueda junto con un título y un subtítulo opcionales en un banner situado encima de la lista de navegación de temas principales"
