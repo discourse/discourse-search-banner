@@ -8,3 +8,5 @@ fr:
   search_banner:
     headline: "Bienvenue dans notre communauté "
     subhead: "Nous sommes heureux de vous avoir parmi nous. Si vous avez besoin d'aide, veuillez effectuer une recherche avant de publier."
+  theme_metadata:
+    description: "La bannière de recherche avancée place une barre de recherche ainsi qu'un titre et un sous-titre facultatifs dans une bannière au-dessus de la navigation principale de la liste des sujets"

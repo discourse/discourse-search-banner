@@ -8,3 +8,5 @@ pt_BR:
   search_banner:
     headline: "Boas-vindas à nossa comunidade"
     subhead: "Estamos contentes que você está aqui. Se precisar de ajuda, pesquise antes de postar."
+  theme_metadata:
+    description: "O Advanced Search Banner insere uma barra de pesquisa em uma manchete opcional e texto de subtítulo em um banner acima da navegação da lista de tópicos principais"
