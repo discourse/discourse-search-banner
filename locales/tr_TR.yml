@@ -8,3 +8,5 @@ tr_TR:
   search_banner:
     headline: "Topluluğumuza hoş geldiniz"
     subhead: "Burada olmanızdan mutluluk duyuyoruz. Yardıma ihtiyacınız varsa lütfen gönderi paylaşmadan önce arama yapın."
+  theme_metadata:
+    description: "Gelişmiş Arama Banner'ı, ana konu listesi gezinmesinin üstündeki bir banner'da isteğe bağlı başlık ve alt başlık metniyle birlikte bir arama çubuğu yerleştirir"
