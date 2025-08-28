@@ -8,3 +8,5 @@ nl:
   search_banner:
     headline: "Welkom bij onze community"
     subhead: "We zijn blij dat je er bent. Als je hulp nodig hebt, zoek dan eerst voordat je een bericht plaatst."
+  theme_metadata:
+    description: "Geavanceerde zoekbanner plaatst een zoekbalk samen met optionele kop- en subkoptekst in een banner boven de navigatie van de hoofdtopiclijst"
