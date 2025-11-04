@@ -31,7 +31,7 @@ export default class SearchBanner extends Component {
     } else if (showOn === "top_menu") {
       return this.siteSettings.top_menu
         .split("|")
-        .any((m) => `discovery.${m}` === currentRouteName);
+        .some((m) => `discovery.${m}` === currentRouteName);
     } else if (showOn === "discovery") {
       return currentRouteName.startsWith("discovery.");
     } else {
