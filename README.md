@@ -1,3 +1,12 @@
+# DEPRECATED
+
+Search Banner theme component is deprecated in favor of Discourse's core Welcome banner.
+
+More details about deprecating Search Banner: https://meta.discourse.org/t/deprecating-the-search-banner-theme-component/379322.
+
+More about Welcome Banner: https://meta.discourse.org/t/creating-a-banner-to-display-at-the-top-of-your-site/153718#p-762961-welcome-banner-1.
+---
+
 This is a component that puts a search bar along with optional headline and subhead text in a banner above the main topic list navigation of a Discourse community.
 
 By default this banner appears on all top-level topic pages (latest/new/unread/top/categories... anything in the `top menu` site setting) but it can also be set to only display on a community's homepage.

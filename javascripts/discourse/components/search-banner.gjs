@@ -7,6 +7,7 @@ import { service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
 import PluginOutlet from "discourse/components/plugin-outlet";
 import SearchMenu from "discourse/components/search-menu";
+import deprecated from "discourse/lib/deprecated";
 import { defaultHomepage } from "discourse/lib/utilities";
 import { i18n } from "discourse-i18n";
 import SearchIcon from "./search-icon";
@@ -15,6 +16,13 @@ export default class SearchBanner extends Component {
   @service router;
   @service siteSettings;
   @service currentUser;
+
+  constructor() {
+    super(...arguments);
+    deprecated("Search Banner is deprecated in favor of core Welcome banner.", {
+      id: "search-banner.deprecated",
+    });
+  }
 
   @action
   willDestroy() {
