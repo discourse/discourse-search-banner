@@ -5,3 +5,4 @@ en:
     search_button_text: ""
   theme_metadata:
     description: "Advanced Search Banner puts a search bar along with optional headline and subhead text in a banner above the main topic list navigation"
+    deprecation_warning: "The Search Banner theme component is deprecated in favor of the core Welcome banner. Please migrate to the Welcome banner"
